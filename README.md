@@ -37,7 +37,7 @@ The algorithm is written by R language, and implement lu algorithms.
 
 this is source of findpiv function
 
-```{r}
+```r
 findpiv <- function(A, k, p, tol) {
   shape <- dim(A) # shape of A matrix, and return a vector, and contains two elements
   m <- shape[1]
@@ -71,7 +71,7 @@ findpiv <- function(A, k, p, tol) {
     It returns new matrix `A`.
 
 
-```{r}
+```r
 switch2rows <- function(A, m, n, i, j) {
   B <- A
   B[m, i:j] <- A[n, i:j]
@@ -91,7 +91,7 @@ switch2rows <- function(A, m, n, i, j) {
           - L a lower trinagular matrix
           - U an upper triangular matrix, size same as raw matrix
 
-```{r}
+```r
 plu <- function(A) {
   shape <- dim(A)
   m <- shape[1]
@@ -144,7 +144,7 @@ plu <- function(A) {
 
 Quickly generate matrix 3x3, and column first, e.g.
 
-```{r} 
+```r
 A <- matrix(data = 1:9, 3, 3)
 A
 ```
@@ -152,17 +152,17 @@ A
 
 And apply `plu` function and return `P,L,U`
 
-```{r}
+```r
 findpiv(A, 1, 1, .Machine$double.eps)
 ```
 
-```{r}
+```r
 plu(A)
 ```
 
 another LU factorization example of rectangular 2x3 matrix 
 
-```{r}
+```r
 A <- matrix(data = 0:5, 2, 3)
 A
 plu(A)
